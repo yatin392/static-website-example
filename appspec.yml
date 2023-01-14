@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: ./
-    destination: /var/www/html/
+    destination: /var/www/html/static-website-example/
     overwrite: yes
 
 hooks:
@@ -16,8 +16,4 @@ hooks:
   AfterInstall:
     - location: scripts/start_apache.sh
       timeout: 180
-      runas: root
-  ValidateService:
-    - location: scripts/status_apache.sh
-      timeout: 3600
       runas: root
